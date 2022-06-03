@@ -11,20 +11,12 @@
         <div>
             <h1><a href="/">Bubun's blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 03.06.2022, 11:05</p>
-            <h2><a href="">My first post</a></h2>
-            <p>
-                The third summer day, <br>
-                Where's <em>Bubun</em> <strong>?</strong>
-            </p>
-        </div>
-
-        <div>
-            <p>published: 03.06.2022, 11:09</p>
-            <h2><a href="">My second post</a></h2>
-            <p>He's dissapeared. Find us</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
